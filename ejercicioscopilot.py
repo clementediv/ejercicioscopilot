@@ -325,7 +325,25 @@ elif jugador == 'papel' and eleccion_del_computador == 'piedra':
 #Analizador de Texto: Escribe un programa que analice un texto proporcionado por el usuario y proporcione 
 #estadísticas como el número de palabras, el número de letras, la palabra más común y la letra más común.
 
-texto = input('ingrese texto: ')
+
+def normalize_text(texto):
+    # Convierte todo el texto a minúsculas
+    return texto.lower()
+
+def count_words(texto):
+    # Divide el texto en palabras usando espacios como delimitador
+    words = texto.split()
+    # Cuenta el número total de palabras
+    return len(words)
+
+# Ejemplo de uso
+user_text = input("Ingrese un texto: ")
+normalized_text = normalize_text(user_text)
+word_count = count_words(normalized_text)
+
+print(f"Texto normalizado: {normalized_text}")
+print(f"Número total de palabras: {word_count}")
+
 
 
 #Simulador de Dados: Programa un simulador de lanzamiento de dados que permita al usuario especificar el número de dados y 
